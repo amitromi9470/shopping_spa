@@ -1,16 +1,25 @@
 .Card {
-    border-style: solid;
-    border-color:gray;
-    height: 275px;
-    width: 200px;
-    border-width: 1px;
-    margin-left: 10px;
-    border-radius: 5px;
-    overflow: hidden;
+  flex: 1 0 21%;
+  border-style: solid;
+  border-color: gray;
+  height: 400px;
+  width: 200px;
+  border-width: 1px;
+  margin: 5px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.flex-c {
-    display: flex;
-    justify-content: left;
-    margin-left: 2px;
+.image {
+  margin-top: 10px;
+}
+
+.description {
+  overflow: hidden;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

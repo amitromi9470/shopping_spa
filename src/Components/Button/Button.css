@@ -1,0 +1,16 @@
+.loginButton {
+  border: 1px solid rgb(128, 35, 128);
+  border-radius: 3px;
+  width: 50px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.loginButton:hover {
+  background-color: rgb(128, 35, 128);
+}
+
+.loginButtonContainer {
+  display: flex;
+  justify-content: center;
+}

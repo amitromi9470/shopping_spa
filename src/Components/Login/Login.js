@@ -6,7 +6,7 @@ import Heading from "../Heading/Heading";
 
 const Login = (props) => {
   const registeredUsers = useSelector((state) => state.register);
-  const loggedInUser=useSelector((state)=>state.login);
+  const loggedInUser = useSelector((state) => state.login);
   const dispatchLogin = useDispatch();
 
   const [validEmail, setValidEmail] = useState("");
@@ -50,17 +50,27 @@ const Login = (props) => {
   };
 
   return !loginSuccessful ? (
-    <div className="Login">
-      <Heading name="My Shop" />
-      <h1>Enter E-mail</h1>
-      <input type="email" onChange={(e) => setValidEmail(e.target.value)} />
-      <h1>Enter Password</h1>
-      <input
-        type="password"
-        onChange={(e) => setValidPassword(e.target.value)}
-      />
-      <Button onClickHandler={onClickHandler} />
-      {!loginMsg && failedLogin}
+    <div className="login">
+      <div className="loginContainer">
+        <div className="loginRow">
+          <p>E-mail</p>
+          <input
+            className="loginInput"
+            type="email"
+            onChange={(e) => setValidEmail(e.target.value)}
+          />
+        </div>
+        <div className="loginRow">
+          <p>Password</p>
+          <input
+            className="loginInput"
+            type="password"
+            onChange={(e) => setValidPassword(e.target.value)}
+          />
+        </div>
+        <Button onClickHandler={onClickHandler} value="Log In" />
+        {!loginMsg && failedLogin}
+      </div>
     </div>
   ) : (
     successfulLogin

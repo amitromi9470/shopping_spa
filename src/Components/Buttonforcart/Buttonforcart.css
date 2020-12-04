@@ -1,23 +1,18 @@
-.Buttonforcart{
-    color: brown;
-}
-.button{
-    
-    color: rgb(211, 23, 23);
+.addToCart {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-.flex-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: 2px;
-    flex-flow: row wrap;
-    
+.button {
+  width: 90px;
+  font-size: 16px;
+  border: 1px solid rgb(128, 35, 128);
+  border-radius: 2px;
+  padding: 8px;
+  cursor: pointer;
 }
 
-.noOfItems{
-    width: 10%;
+.button:hover {
+  background-color: solid rgb(128, 35, 128);
 }
-
-
-  

@@ -1,7 +1,7 @@
 export default (state=[],action)=>{
     switch(action.type){
-        case "USER_REGISTRATION" : {
-            return [action.payload,...state]
+        case "FETCH_API" : {
+            return action.payload
         }
         default : {
             return state;

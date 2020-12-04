@@ -1,48 +1,26 @@
-import React,{useState} from "react";
+import React from "react";
 import "./Buttonforcart.css";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-const Buttonforcart = () => {
-  const dispatchCart = useDispatch();
-  const cartCount=useSelector((state)=>state.cartCount)
+const Buttonforcart = (props) => {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.products);
+  const buttonClassId = `button${props.id}`;
 
-  const [cartValue,setCartValue]=useState(0);
-
-  const onClickAddHandler = () => {
-      setCartValue(cartValue+1);
-
-    dispatchCart({
+  const addToCartHandler = () => {
+    const productAdded = products.find((product) => product.id === props.id);
+    dispatch({
       type: "ADD_TO_CART",
+      payload: productAdded,
     });
   };
-
-  const onClickSubHandler = () => {
-    if (cartValue>0)
-    {
-      setCartValue(cartValue-1);
-
-    }
-    
-    if(cartValue>0)
-    {
-      dispatchCart({
-        type: "REMOVE_FROM_CART",
-      });
-
-    }
-   
-  };
-
-
-
   return (
-    <div className="flex-container">
-      <input type="button" className="button" value="Add To Cart" />
-      <input type="button" value="-" onClick={onClickSubHandler} />
-      <input className="noOfItems" value={cartValue} min="0"/>
-      <input type="button" value="+" onClick={onClickAddHandler} />
+    <div className="addToCart">
+      <div id={buttonClassId} className="button" onClick={addToCartHandler}>
+        Add To Cart
+      </div>
     </div>
-  )
+  );
 };
 
 export default Buttonforcart;
